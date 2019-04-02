@@ -115,6 +115,8 @@ let getUser = createAsyncFun(100, (id, cb)=>{
   ];
   let user = users.filter(user => user.id === id);
   user.length > 0 ? user[0] : null; 
+	if(cb)cb(user[0]);
+	return user[0];
 });
 let add = createAsyncFun(200, (a, b, cb)=>{
   let res = a + b;
